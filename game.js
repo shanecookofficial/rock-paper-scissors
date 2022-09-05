@@ -1,3 +1,5 @@
+let score = [0,0,0];
+
 function generateComputerInput() {
     let choices = ['rock','paper','scissors'];
     let choice = Math.floor(Math.random() * 3);
@@ -20,6 +22,18 @@ function gameLogic(userInput, computerInput) {
     } else if (userInput == 'scissors' && computerInput == 'rock') {
         return 'computer';
     } else {
-        console.log('Something is wrong :/')
+        console.log('Something in the gameLogic function is wrong');
+    }
+}
+
+function updateScore(gameResult) {
+    if (gameResult == 'user') {
+        score[0] += 1;
+    } else if (gameResult == 'computer') {
+        score[1] += 1;
+    } else if (gameResult == 'tie') {
+        score[2] += 1;
+    } else {
+        console.log('Something in the updateScore function is wrong');
     }
 }
