@@ -40,12 +40,22 @@ function updateScore(gameResult) {
 
 function updateMessage(gameResult) {
     if (gameResult == 'user') {
-        document.querySelector('#game-message').textContent = 'You won that round!'
+        document.querySelector('#game-message').textContent = 'You won that round!';
     } else if (gameResult == 'computer') {
-        document.querySelector('#game-message').textContent = 'You lost that round!'
+        document.querySelector('#game-message').textContent = 'You lost that round!';
     } else if (gameResult == 'tie') {
-        document.querySelector('#game-message').textContent = 'You tied that round!'
+        document.querySelector('#game-message').textContent = 'You tied that round!';
     } else {
         console.log('Something in the updateMessage function is wrong');
+    }
+}
+
+function checkWin() {
+    if (score[0] = 5) {
+        document.querySelector('#game-message').textContent = 'You win!';
+    } else if (score[1] = 5) {
+        document.querySelector('#game-message').textContent = 'You lose!';
+    } else {
+        return;
     }
 }
