@@ -1,6 +1,6 @@
 // globals
 let score = [0,0,0];
-let win = False;
+let win = false;
 let rockButton = document.querySelector('#rock');
 let paperButton = document.querySelector('#paper');
 let scissorsButton = document.querySelector('#scissors');
@@ -72,7 +72,7 @@ function checkWin() {
 
 // the 'main' game function
 function game(userInput) {
-    if (win = False) {
+    if (win = false) {
         let result = gameLogic(userInput, generateComputerInput());
         updateScore(result);
         updateMessage(result);
