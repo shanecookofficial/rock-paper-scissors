@@ -37,3 +37,15 @@ function updateScore(gameResult) {
         console.log('Something in the updateScore function is wrong');
     }
 }
+
+function updateMessage(gameResult) {
+    if (gameResult == 'user') {
+        document.querySelector('#game-message').textContent = 'You won that round!'
+    } else if (gameResult == 'computer') {
+        document.querySelector('#game-message').textContent = 'You lost that round!'
+    } else if (gameResult == 'tie') {
+        document.querySelector('#game-message').textContent = 'You tied that round!'
+    } else {
+        console.log('Something in the updateMessage function is wrong');
+    }
+}
