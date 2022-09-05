@@ -1,9 +1,20 @@
 // globals
 let score = [0,0,0];
 let win = false;
-let rockButton = document.querySelector('#rock');
-let paperButton = document.querySelector('#paper');
-let scissorsButton = document.querySelector('#scissors');
+let rockButton = document.getElementById('rock');
+let paperButton = document.getElementById('paper');
+let scissorsButton = document.getElementById('scissors');
+
+// eventListners
+rockButton.addEventListener("click", function () {
+    game('rock');
+})
+paperButton.addEventListener("click", function () {
+    game('paper');
+})
+scissorsButton.addEventListener("click", function () {
+    game('scissors');
+})
 
 // generates int out of 0,1,2
 function generateComputerInput() {
@@ -61,9 +72,9 @@ function updateMessage(gameResult) {
 
 // updates #game-message on the DOM if a win is achieved
 function checkWin() {
-    if (score[0] = 5) {
+    if (score[0] == 5) {
         document.querySelector('#game-message').textContent = 'You win!';
-    } else if (score[1] = 5) {
+    } else if (score[1] == 5) {
         document.querySelector('#game-message').textContent = 'You lose!';
     } else {
         return;
@@ -72,7 +83,7 @@ function checkWin() {
 
 // the 'main' game function
 function game(userInput) {
-    if (win = false) {
+    if (win == false) {
         let result = gameLogic(userInput, generateComputerInput());
         updateScore(result);
         updateMessage(result);
