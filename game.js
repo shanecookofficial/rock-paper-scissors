@@ -57,6 +57,17 @@ function updateScore(gameResult) {
     }
 }
 
+// IN PROGRESS
+function updateVisualScore(gameResult) {
+    if (gameResult == 'user') {
+
+    } else if (gameResult == 'computer') {
+    } else if (gameResult == 'tie') {
+    } else {
+        console.log('Something in the updateVisualScore function is wrong');
+    }
+}
+
 // updates #game-message on the DOM based off of the gameResult
 function updateMessage(gameResult) {
     if (gameResult == 'user') {
