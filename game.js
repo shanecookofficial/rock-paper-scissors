@@ -60,9 +60,11 @@ function updateScore(gameResult) {
 // IN PROGRESS
 function updateVisualScore(gameResult) {
     if (gameResult == 'user') {
-
+        document.getElementById('player-wins').textContent = score[0];
     } else if (gameResult == 'computer') {
+        document.getElementById('computer-wins').textContent = score[1];
     } else if (gameResult == 'tie') {
+        document.getElementById('ties').textContent = score[2];
     } else {
         console.log('Something in the updateVisualScore function is wrong');
     }
@@ -97,6 +99,7 @@ function game(userInput) {
     if (win == false) {
         let result = gameLogic(userInput, generateComputerInput());
         updateScore(result);
+        updateVisualScore(result);
         updateMessage(result);
         checkWin();
     } else {
