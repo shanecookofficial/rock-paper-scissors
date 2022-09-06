@@ -4,6 +4,7 @@ let win = false;
 let rockButton = document.getElementById('rock');
 let paperButton = document.getElementById('paper');
 let scissorsButton = document.getElementById('scissors');
+let playAgainButton = document.getElementById('play-again');
 
 // eventListners
 rockButton.addEventListener("click", function () {
@@ -14,6 +15,9 @@ paperButton.addEventListener("click", function () {
 })
 scissorsButton.addEventListener("click", function () {
     game('scissors');
+})
+playAgainButton.addEventListener("click", function () {
+    resetGame();
 })
 
 // generates int out of 0,1,2
@@ -94,6 +98,16 @@ function checkWin() {
     } else {
         return;
     }
+}
+
+// resets the score and the win variable so the user can play again
+function resetGame() {
+    score = [0,0,0];
+    document.getElementById('player-wins').textContent = score[0];
+    document.getElementById('computer-wins').textContent = score[1];
+    document.getElementById('ties').textContent = score[2];
+    document.getElementById('game-message').textContent = 'Click a button to play!';
+    win = false;
 }
 
 // the 'main' game function
