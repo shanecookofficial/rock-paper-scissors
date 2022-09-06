@@ -87,8 +87,10 @@ function updateMessage(gameResult) {
 function checkWin() {
     if (score[0] == 5) {
         document.querySelector('#game-message').textContent = 'You win!';
+        win = true;
     } else if (score[1] == 5) {
         document.querySelector('#game-message').textContent = 'You lose!';
+        win = true;
     } else {
         return;
     }
